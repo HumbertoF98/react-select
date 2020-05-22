@@ -128,8 +128,8 @@ export type Props = {
   escapeClearsValue: boolean,
   /* Custom method to filter whether an option should be displayed in the menu */
   filterOption:
-    | (({ label: string, value: string, data: OptionType }, string) => boolean)
-    | null,
+  | (({ label: string, value: string, data: OptionType }, string) => boolean)
+  | null,
   /*
     Formats group labels in the menu as React components
 
@@ -279,7 +279,7 @@ export const defaultProps = {
   openMenuOnClick: true,
   options: [],
   pageSize: 5,
-  placeholder: 'Select...',
+  placeholder: 'Selecione o dia...',
   screenReaderStatus: ({ count }: { count: number }) =>
     `${count} result${count !== 1 ? 's' : ''} available`,
   styles: {},
@@ -1382,19 +1382,19 @@ export default class Select extends Component<Props, State> {
     // An aria live message representing the currently focused value in the select.
     const focusedValueMsg = focusedValue
       ? valueFocusAriaMessage({
-          focusedValue,
-          getOptionLabel: this.getOptionLabel,
-          selectValue,
-        })
+        focusedValue,
+        getOptionLabel: this.getOptionLabel,
+        selectValue,
+      })
       : '';
     // An aria live message representing the currently focused option in the select.
     const focusedOptionMsg =
       focusedOption && menuIsOpen
         ? optionFocusAriaMessage({
-            focusedOption,
-            getOptionLabel: this.getOptionLabel,
-            options,
-          })
+          focusedOption,
+          getOptionLabel: this.getOptionLabel,
+          options,
+        })
         : '';
     // An aria live message representing the set of focusable results and current searchterm/inputvalue.
     const resultsMsg = resultsAriaMessage({
@@ -1774,8 +1774,8 @@ export default class Select extends Component<Props, State> {
         {menuElement}
       </MenuPortal>
     ) : (
-      menuElement
-    );
+        menuElement
+      );
   }
   renderFormField() {
     const { delimiter, isDisabled, isMulti, name } = this.props;
@@ -1801,8 +1801,8 @@ export default class Select extends Component<Props, State> {
               />
             ))
           ) : (
-            <input name={name} type="hidden" />
-          );
+              <input name={name} type="hidden" />
+            );
 
         return <div>{input}</div>;
       }
