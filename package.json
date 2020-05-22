@@ -1,13 +1,13 @@
 {
-  "name": "@react-select/monorepo",
+  "name": "@react-select-br/monorepo",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Select control built with and for ReactJS",
-  "author": "Jed Watson",
+  "author": "Humberto",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/react-select.git"
+    "url": "https://github.com/HumbertoF98/react-select"
   },
   "dependencies": {
     "@atlaskit/button": "^7.0.2",
